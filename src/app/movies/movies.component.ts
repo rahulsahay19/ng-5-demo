@@ -39,8 +39,8 @@ export class MoviesComponent implements OnInit {
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-    this.moviesCount=this.movies.length;
     this.dataService.movie.subscribe(res=>this.movies=res);
+    this.moviesCount=this.movies.length;
     this.dataService.nextMovie(this.movies);
   }
 
